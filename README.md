@@ -3,17 +3,17 @@
 Project Name: laravel12-custom-route-demo
 Laravel Version: 12.x
 
-🚀 Project Aim (Simple Explanation)
+🚀 Project Aim
 
-This project will help you learn:
+This project helps you learn:
 
-How to create a custom route file instead of using the default web.php
+How to create a custom route file instead of using web.php
 
-How to register that custom route file in Laravel 12
+How to register the custom route file in Laravel 12
 
 How to connect routes → controller → view
 
-How to design beautiful UI with modern effects
+How to design modern UI
 
 How Laravel route loading works internally
 
@@ -21,9 +21,9 @@ How Laravel route loading works internally
 
 Laravel defaults:
 
-routes/web.php → for web routes
+routes/web.php → Web routes
 
-routes/api.php → for API routes
+routes/api.php → API routes
 
 But sometimes, for clean separation, you may want:
 
@@ -78,7 +78,10 @@ MAIL_FROM_NAME="${APP_NAME}"
 
 Notes:
 
-Create database: CREATE DATABASE laravel12_demo;
+Create database:
+
+CREATE DATABASE laravel12_demo;
+
 
 .env contains secrets → do not commit to Git
 
@@ -249,7 +252,7 @@ Open browser:
 
 http://localhost:8000/custom
 
-⭐ FULL PROJECT STRUCTURE
+⭐ Full Project Structure
 laravel12-custom-route-demo/
 │
 ├── app/
@@ -266,7 +269,6 @@ laravel12-custom-route-demo/
 │
 ├── routes/
 │   ├── web.php
-│   └── custom.php   <-- Your custom route file
+│   └── custom.php
 │
 └── bootstrap/
-    └── app.php       <-- Registered custom route
