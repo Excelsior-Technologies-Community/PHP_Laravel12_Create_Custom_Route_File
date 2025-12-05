@@ -1,59 +1,144 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel 12 – Custom Route File Demo
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Project Name:** laravel12-custom-route-demo  
+**Laravel Version:** 12.x  
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Project Aim
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+This project demonstrates how to:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Create a custom route file instead of using the default `web.php`.
+- Register the custom route file in Laravel 12.
+- Connect routes to controllers and views.
+- Organize routes for clean separation (frontend, admin, SEO, modules, etc.).
+- Understand how Laravel route loading works internally.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 📌 Why Custom Route File?
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Laravel by default provides:
 
-## Laravel Sponsors
+- `routes/web.php` → for web routes  
+- `routes/api.php` → for API routes  
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+**Custom route files** are useful for:
 
-### Premium Partners
+- Clean separation of modules  
+- Admin/user-specific routes  
+- SEO-friendly routes  
+- Project-specific route organization  
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## STEP 1: Create Laravel 12 Project
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+**Commands:**
+```bash
+composer create-project laravel/laravel laravel12-custom-route-demo "12.*"
+cd laravel12-custom-route-demo
+php artisan serve
+Install Laravel 12 using Composer.
 
-## Code of Conduct
+Start the development server.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+STEP 2: Configure .env
+Set the application name, environment, debug mode, and URL.
 
-## Security Vulnerabilities
+Configure the database connection for MySQL or your preferred database.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Set cache, session, and queue drivers.
 
-## License
+Configure mail settings for development or production.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Generate the application key.
+
+Keep the .env file secret and do not commit to Git.
+
+Commands:
+
+bash
+
+php artisan key:generate
+STEP 3: Create Custom Route File
+Create a new route file named custom.php inside the routes folder.
+
+Use it to separate frontend/public routes from backend/admin routes.
+
+Name your routes for easier URL generation and maintainability.
+
+Commands:
+
+bash
+
+type nul > routes\custom.php   # Windows
+# OR
+touch routes/custom.php        # Mac/Linux
+STEP 4: Register Custom Route in Laravel 12
+Open the bootstrap/app.php file.
+
+Add the new custom route file to the routing configuration.
+
+Laravel 12 will automatically load both web.php and custom.php.
+
+STEP 5: Create Controller
+Create a controller to handle the routes defined in the custom route file.
+
+Connect controller methods to views for each route.
+
+Commands:
+
+bash
+
+php artisan make:controller CustomController
+STEP 6: Create Views Folder
+Create a folder resources/views/custom/.
+
+Add views for Home, About, and Contact pages.
+
+Apply your preferred UI/UX design for each page.
+
+Commands:
+
+bash
+
+mkdir resources/views/custom
+# Then create index.blade.php, about.blade.php, contact.blade.php inside
+STEP 7: Run the Application
+Start the development server using Artisan.
+
+Open the browser and navigate to the custom routes to test.
+
+Commands:
+
+bash
+
+php artisan serve
+Open browser:
+http://localhost:8000/custom
+
+⭐ Full Project Structure
+bash
+Copy code
+laravel12-custom-route-demo/
+│
+├── app/
+│   └── Http/
+│       └── Controllers/
+│           └── CustomController.php   # Created via artisan
+│
+├── resources/
+│   └── views/
+│       └── custom/
+│           ├── index.blade.php
+│           ├── about.blade.php
+│           └── contact.blade.php
+│
+├── routes/
+│   ├── web.php
+│   └── custom.php   # Custom route file created manually
+│
+└── bootstrap/
+    └── app.php      # Custom route registered here
