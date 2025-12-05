@@ -7,13 +7,13 @@ Laravel Version: 12.x
 
 This project helps you learn:
 
-How to create a custom route file instead of using web.php
+How to create a custom route file instead of web.php
 
 How to register the custom route file in Laravel 12
 
 How to connect routes → controller → view
 
-How to design modern UI
+How to design modern UI with glassmorphism
 
 How Laravel route loading works internally
 
@@ -120,7 +120,7 @@ Group with prefix or middleware if needed
 
 STEP 4: Register Custom Route in Laravel 12
 
-Open bootstrap/app.php → modify routing:
+Open bootstrap/app.php and modify routing:
 
 ->withRouting(
     web: [
@@ -133,7 +133,7 @@ Open bootstrap/app.php → modify routing:
 )
 
 
-Laravel 12 will now load:
+Laravel 12 will now automatically load:
 
 web.php
 
@@ -184,11 +184,35 @@ Folder: resources/views/custom
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', sans-serif; height: 100vh; display: flex; justify-content: center; align-items: center; margin:0; }
-        .glass-card { background: rgba(255,255,255,0.2); padding: 40px; border-radius:20px; width:460px; color:#fff; box-shadow:0 8px 32px rgba(0,0,0,0.2); backdrop-filter: blur(10px); animation: fadeIn 1s ease-in-out; text-align:center;}
-        .btn-modern { padding:12px 25px; border-radius:30px; transition:0.3s; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin:0;
+        }
+        .glass-card {
+            background: rgba(255,255,255,0.2);
+            padding: 40px;
+            border-radius:20px;
+            width:460px;
+            color:#fff;
+            box-shadow:0 8px 32px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-in-out;
+            text-align:center;
+        }
+        .btn-modern {
+            padding:12px 25px;
+            border-radius:30px;
+            transition:0.3s;
+        }
         .btn-modern:hover { transform: scale(1.1); }
-        @keyframes fadeIn { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);} }
+        @keyframes fadeIn {
+            from {opacity:0; transform: translateY(20px);}
+            to {opacity:1; transform: translateY(0);}
+        }
     </style>
 </head>
 <body>
@@ -209,8 +233,22 @@ Folder: resources/views/custom
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family:'Poppins',sans-serif; height:100vh; display:flex; justify-content:center; align-items:center; }
-        .glass-card { width:450px; background: rgba(255,255,255,0.2); padding:40px; border-radius:20px; text-align:center; backdrop-filter: blur(12px); color:white;}
+        body {
+            font-family:'Poppins',sans-serif;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .glass-card {
+            width:450px;
+            background: rgba(255,255,255,0.2);
+            padding:40px;
+            border-radius:20px;
+            text-align:center;
+            backdrop-filter: blur(12px);
+            color:white;
+        }
         .btn-modern:hover { transform:scale(1.1); }
     </style>
 </head>
@@ -231,8 +269,22 @@ Folder: resources/views/custom
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family:'Poppins',sans-serif; height:100vh; display:flex; justify-content:center; align-items:center; }
-        .glass-card { width:450px; background: rgba(255,255,255,0.2); padding:40px; border-radius:20px; text-align:center; backdrop-filter: blur(12px); color:white;}
+        body {
+            font-family:'Poppins',sans-serif;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .glass-card {
+            width:450px;
+            background: rgba(255,255,255,0.2);
+            padding:40px;
+            border-radius:20px;
+            text-align:center;
+            backdrop-filter: blur(12px);
+            color:white;
+        }
     </style>
 </head>
 <body>
@@ -272,3 +324,4 @@ laravel12-custom-route-demo/
 │   └── custom.php
 │
 └── bootstrap/
+    └── app.php
