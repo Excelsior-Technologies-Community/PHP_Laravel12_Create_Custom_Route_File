@@ -1,10 +1,11 @@
-Laravel 12 Custom Route Demo
+⭐ Laravel 12 – Create Custom Route File & Implement (FULL PROJECT)
 
+Project Name: laravel12-custom-route-demo
+Laravel Version: 12.x
 By: Manasi Patel
 Date: 2025
-Laravel Version: 12.x
 
-A simple Laravel 12 project demonstrating how to create a custom route file, connect it to controllers and views, and build a modern UI.
+A simple Laravel 12 project demonstrating how to create a custom route file, connect routes to controllers and views, and design a modern UI.
 
 ⭐ Overview
 
@@ -16,7 +17,7 @@ Registering the custom route in Laravel 12
 
 Connecting routes → controller → view
 
-Building modern UI with glassmorphism
+Building modern UI with glassmorphism effect
 
 Understanding Laravel’s route loading process
 
@@ -62,7 +63,10 @@ Route::get('/custom/about', [CustomController::class, 'about'])->name('custom.ab
 // Contact Route
 Route::get('/custom/contact', [CustomController::class, 'contact'])->name('custom.contact');
 
-⚙ 4. Register Custom Route
+
+Tip: Use route names (route('custom.home')) and consider grouping with prefixes or middleware if needed.
+
+⚙ 4. Register Custom Route in Laravel 12
 
 Edit bootstrap/app.php:
 
@@ -95,7 +99,7 @@ class CustomController extends Controller
     public function contact() { return view('custom.contact'); }
 }
 
-🖥 6. Blade Views
+🖥 6. Create Blade Views
 
 Create folder: resources/views/custom/
 
@@ -170,7 +174,7 @@ Create folder: resources/views/custom/
 php artisan serve
 
 
-Open browser:
+Open in browser:
 
 http://localhost:8000/custom
 
