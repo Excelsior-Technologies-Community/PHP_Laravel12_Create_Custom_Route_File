@@ -1,35 +1,38 @@
-⭐ Laravel 12 – Create Custom Route File & Implement (FULL PROJECT)
+# ⭐ Laravel 12 – Create Custom Route File & Implement (FULL PROJECT)
 
-Project Name: laravel12-custom-route-demo
-Laravel Version: 12.x
-By: Manasi Patel
-Date: 2025
+**Project Name:** laravel12-custom-route-demo  
+**Laravel Version:** 12.x  
+**By:** Manasi Patel  
+**Date:** 2025  
 
-A simple Laravel 12 project demonstrating how to create a custom route file, connect routes to controllers and views, and design a modern UI.
+A simple Laravel 12 project demonstrating how to create a **custom route file**, connect routes to controllers and views, and design a modern UI.
 
-⭐ Overview
+---
+
+## ⭐ Overview
 
 This project demonstrates:
 
-Creating a custom route file separate from web.php
+- Creating a **custom route file** separate from `web.php`  
+- Registering the custom route in Laravel 12  
+- Connecting **routes → controller → view**  
+- Building modern UI with **glassmorphism effect**  
+- Understanding Laravel’s **route loading process**  
 
-Registering the custom route in Laravel 12
+---
 
-Connecting routes → controller → view
+## 📁 1. Project Setup
 
-Building modern UI with glassmorphism effect
+### Install Laravel 12
 
-Understanding Laravel’s route loading process
-
-📁 1. Project Setup
-Install Laravel 12
+```bash
 composer create-project laravel/laravel laravel12-custom-route-demo "12.*"
 cd laravel12-custom-route-demo
 php artisan serve
-
 ⚙ 2. Configure Database
-
 Update .env:
+
+env
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -37,17 +40,18 @@ DB_PORT=3306
 DB_DATABASE=laravel12_demo
 DB_USERNAME=root
 DB_PASSWORD=secret
-
-
 Create database:
 
+sql
+
 CREATE DATABASE laravel12_demo;
-
 🗄 3. Create Custom Route File
+bash
+
 type nul > routes\custom.php
-
-
 File: routes/custom.php
+
+php
 
 <?php
 
@@ -62,13 +66,12 @@ Route::get('/custom/about', [CustomController::class, 'about'])->name('custom.ab
 
 // Contact Route
 Route::get('/custom/contact', [CustomController::class, 'contact'])->name('custom.contact');
-
-
 Tip: Use route names (route('custom.home')) and consider grouping with prefixes or middleware if needed.
 
 ⚙ 4. Register Custom Route in Laravel 12
-
 Edit bootstrap/app.php:
+
+php
 
 ->withRouting(
     web: [
@@ -79,12 +82,13 @@ Edit bootstrap/app.php:
     commands: __DIR__.'/../routes/console.php',
     channels: __DIR__.'/../routes/channels.php',
 )
-
 🧑‍💻 5. Create Controller
+bash
+
 php artisan make:controller CustomController
-
-
 File: app/Http/Controllers/CustomController.php
+
+php
 
 <?php
 
@@ -94,16 +98,30 @@ use Illuminate\Http\Request;
 
 class CustomController extends Controller
 {
-    public function index() { return view('custom.index'); }
-    public function about() { return view('custom.about'); }
-    public function contact() { return view('custom.contact'); }
+    // Show Homepage
+    public function index()
+    {
+        return view('custom.index');
+    }
+
+    // Show About Page
+    public function about()
+    {
+        return view('custom.about');
+    }
+
+    // Show Contact Page
+    public function contact()
+    {
+        return view('custom.contact');
+    }
 }
-
 🖥 6. Create Blade Views
-
 Create folder: resources/views/custom/
 
 6.1 index.blade.php (Home Page)
+html
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -126,8 +144,9 @@ Create folder: resources/views/custom/
     </div>
 </body>
 </html>
-
 6.2 about.blade.php (About Page)
+html
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -148,8 +167,9 @@ Create folder: resources/views/custom/
     </div>
 </body>
 </html>
-
 6.3 contact.blade.php (Contact Page)
+html
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -169,16 +189,18 @@ Create folder: resources/views/custom/
     </div>
 </body>
 </html>
-
 🚀 7. Run Application
+bash
+
 php artisan serve
-
-
 Open in browser:
 
-http://localhost:8000/custom
+bash
 
+http://localhost:8000/custom
 ✅ Full Project Structure
+vbnet
+
 laravel12-custom-route-demo/
 │
 ├── app/
