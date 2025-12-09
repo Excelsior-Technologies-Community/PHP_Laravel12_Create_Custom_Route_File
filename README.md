@@ -1,6 +1,6 @@
 ⭐PHP_Laravel12_Create_Custom_Route_File
 ---
-Project Name: laravel12-custom-route-demo
+Project Name: PHP_Laravel12_Create_Custom_Route_File
 Laravel Version: 12.x
 
 🚀 Project Aim
@@ -380,7 +380,7 @@ http://localhost:8000/custom
 
 ```
 
-laravel12-custom-route-demo/
+PHP_Laravel12_Create_Custom_Route_File/
 │
 ├── app/
 │   └── Http/
