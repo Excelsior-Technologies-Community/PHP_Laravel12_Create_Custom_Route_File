@@ -1,4 +1,4 @@
-⭐ Laravel 12 – Custom Route File Demo
+⭐PHP_Laravel12_Create_Custom_Route_File
 ---
 Project Name: laravel12-custom-route-demo
 Laravel Version: 12.x
@@ -38,8 +38,8 @@ Custom route files help maintain clean, separate, scalable routing.
 ✅ STEP 1: Create Laravel 12 Project
 📌 Commands:
 ```
-composer create-project laravel/laravel laravel12-custom-route-demo "12.*"
-cd laravel12-custom-route-demo
+composer create-project laravel/laravel PHP_Laravel12_Create_Custom_Route_File "12.*"
+cd PHP_Laravel12_Create_Custom_Route_File
 php artisan serve
 ```
 
