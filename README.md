@@ -230,9 +230,9 @@ mkdir resources/views/custom
 
 Inside create:
 
-✔ index.blade.php
-✔ about.blade.php
-✔ contact.blade.php
+ index.blade.php
+ about.blade.php
+ contact.blade.php
 
  1) resources/views/custom/index.blade.php
 ```
