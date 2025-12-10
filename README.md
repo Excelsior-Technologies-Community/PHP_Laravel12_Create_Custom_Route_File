@@ -1,9 +1,9 @@
-⭐PHP_Laravel12_Create_Custom_Route_File
+PHP_Laravel12_Create_Custom_Route_File
 ---
 Project Name: PHP_Laravel12_Create_Custom_Route_File
 Laravel Version: 12.x
 
-🚀 Project Aim
+ Project Aim
 ---
 This project demonstrates how to:
 
@@ -17,7 +17,7 @@ Use a clean folder structure for frontend/backend
 
 Understand how Laravel route loading works internally
 
-📌 Why Custom Route File?
+ Why Custom Route File?
 ---
 Laravel by default provides:
 
@@ -35,15 +35,15 @@ Modular apps	blog.php, shop.php, etc.
 
 Custom route files help maintain clean, separate, scalable routing.
 
-✅ STEP 1: Create Laravel 12 Project
-📌 Commands:
+ STEP 1: Create Laravel 12 Project
+ Commands:
 ```
 composer create-project laravel/laravel PHP_Laravel12_Create_Custom_Route_File "12.*"
 cd PHP_Laravel12_Create_Custom_Route_File
 php artisan serve
 ```
 
-✔ What this step does?
+ What this step does?
 ---
 Downloads Laravel 12
 
@@ -53,10 +53,10 @@ Starts your local development server
 
 You can now open:
 ```
-👉 http://127.0.0.1:8000
+ http://127.0.0.1:8000
 ```
 
-✅ STEP 2: Configure .env
+ STEP 2: Configure .env
 
 The .env file contains:
 
@@ -68,7 +68,7 @@ Mail config
 
 Cache/session drivers
 
-📄 Example .env
+ Example .env
 ```
 APP_NAME="Laravel12 Custom Route Demo"
 APP_ENV=local
@@ -97,15 +97,15 @@ MAIL_PASSWORD=null
 MAIL_ENCRYPTION=null
 ```
 
-✔ Generate app key:
+ Generate app key:
 ```
 
 php artisan key:generate
 ```
 
-⚠️ Never upload .env to GitHub (contains sensitive info)
-✅ STEP 3: Create Custom Route File
-📌 Create file:
+ Never upload .env to GitHub (contains sensitive info)
+ STEP 3: Create Custom Route File
+ Create file:
 
 Windows:
 ```
@@ -116,7 +116,7 @@ Mac/Linux:
 
 touch routes/custom.php
 
-📄 File: routes/custom.php (FULL CODE + COMMENTS)
+ File: routes/custom.php (FULL CODE + COMMENTS)
 ```
 <?php
 
@@ -139,15 +139,15 @@ Route::get('/custom/about', [CustomController::class, 'about'])
 Route::get('/custom/contact', [CustomController::class, 'contact'])
      ->name('custom.contact');  // Contact page
 ```
-✅ STEP 4: Register Custom Route File in Laravel 12
+ STEP 4: Register Custom Route File in Laravel 12
 
 In Laravel 12, RouteServiceProvider is not used anymore.
 
 You must register routes inside:
 
-📄 bootstrap/app.php
+ bootstrap/app.php
 
-🔧 Update the routing section:
+ Update the routing section:
 
 Find:
 ```
@@ -171,7 +171,7 @@ Replace with:
     channels: __DIR__.'/../routes/channels.php',
 )
 ```
-✔ Now Laravel loads:
+ Now Laravel loads:
 
 web.php
 
@@ -179,12 +179,12 @@ custom.php
 
 automatically
 
-✅ STEP 5: Create Controller
+ STEP 5: Create Controller
 Command:
 ```
 php artisan make:controller CustomController
 ```
-📄 File: app/Http/Controllers/CustomController.php
+ File: app/Http/Controllers/CustomController.php
 
 (Complete with comments)
 ```
@@ -221,7 +221,7 @@ class CustomController extends Controller
     }
 }
 ```
-✅ STEP 6: Create Views Folder & Files
+ STEP 6: Create Views Folder & Files
 Create folder:
 ```
 mkdir resources/views/custom
@@ -234,7 +234,7 @@ Inside create:
 ✔ about.blade.php
 ✔ contact.blade.php
 
-📄 1) resources/views/custom/index.blade.php
+ 1) resources/views/custom/index.blade.php
 ```
 
 <!DOCTYPE html>
@@ -282,7 +282,7 @@ Inside create:
 </html>
 ```
 
-📄 2) resources/views/custom/about.blade.php
+ 2) resources/views/custom/about.blade.php
 ```
 
 <!DOCTYPE html>
@@ -323,7 +323,7 @@ Inside create:
 </html>
 ```
 
-📄 3) resources/views/custom/contact.blade.php
+ 3) resources/views/custom/contact.blade.php
 ```
 
 <!DOCTYPE html>
@@ -364,19 +364,19 @@ Inside create:
 </html>
 ```
 
-✅ STEP 7: Run Application
+ STEP 7: Run Application
 ```
 
 php artisan serve
 ```
 
-✔ Open in Browser:
+ Open in Browser:
 ```
 
 http://localhost:8000/custom
 ```
 
-⭐ FULL PROJECT STRUCTURE
+ FULL PROJECT STRUCTURE
 
 ```
 
@@ -401,5 +401,5 @@ PHP_Laravel12_Create_Custom_Route_File/
 └── bootstrap/
     └── app.php        # custom route registered here
 
-🎉 README Completed!
+ README Completed!
 
