@@ -376,6 +376,23 @@ php artisan serve
 http://localhost:8000/custom
 ```
 
+You can see this type Output :
+
+Custom Page:
+<img width="1910" height="966" alt="Screenshot 2025-12-05 125224" src="https://github.com/user-attachments/assets/9f53dbbe-6bb3-46e5-8ab6-2ec3655e3f53" />
+
+About Page:
+
+<img width="1918" height="962" alt="Screenshot 2025-12-05 125242" src="https://github.com/user-attachments/assets/c909f76d-2f3b-4da7-8355-d735dce7a6d0" />
+
+Contact Page:
+
+<img width="1911" height="964" alt="Screenshot 2025-12-05 125253" src="https://github.com/user-attachments/assets/481b179c-e217-4336-8240-d8c5691baabc" />
+
+
+
+
+
  FULL PROJECT STRUCTURE
 
 ```
