@@ -1,11 +1,7 @@
 <?php
 
-
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomController;
-
-
 
 /**
  * CUSTOM ROUTE FILE
@@ -13,8 +9,6 @@ use App\Http\Controllers\CustomController;
  * This file contains routes separated from web.php
  * for cleaner project structure.
  */
-
-
 
 // Home Route
 Route::get('/custom', [CustomController::class, 'index'])->name('custom.home');
